@@ -1,8 +1,9 @@
 <?php
 
+namespace Alura\Banco\Modelo\Conta;
+
 class Conta
 {
-  //definir dados da conta
   private $titular;
   private $saldo;
   private static $numeroDeContas = 0;
@@ -13,6 +14,11 @@ class Conta
     $this->saldo = 0;
 
     Conta::$numeroDeContas++;
+  }
+
+  public function __destruct()
+  {
+      self::$numeroDeContas--;
   }
 
   public function saca(float $valorASacar): void
@@ -48,16 +54,6 @@ class Conta
   public function recuperaSaldo(): float
   {
     return $this->saldo;
-  }
-
-  public function defineCpfTitular(string $cpf): void
-  {
-    $this->cpfTitular = $cpf;
-  }
-
-  public function defineNomeTitular(string $nome): void
-  {
-    $this->nomeTitular = $nome;
   }
 
   public function recuperaNomeTitular(): string
