@@ -9,7 +9,7 @@ $conta = new ContaPoupanca(
     new Titular(
         new CPF('123.456.789-10'),
         'Ricardo Ferreira',
-            new Endereco('Curitiba', 'Uberaba', 'R. ABC', '873')
+        new Endereco('Curitiba', 'Uberaba', 'R. ABC', '873')
     )
 );
 $conta->deposita(500);
